@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "163f2c7a-d006-4656-88b8-853f7b2f531b",
+		"name": "Coleccion 1 Sprint",
+		"description": "se prueban los 4 metodos http",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"id\": \"970327218308\",\n\t\"tipo_documento\": \"cc\",\n\t\"nombre\": \"juanito\",\n\t\"apellidos\": \"atomos\",\n\t\"direccion\": \"fake street 123\",\n\t\"telefono\": \"2284814\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Index (get all)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"id\": \"970327218308\",\n\t\"tipo_documento\": \"cc\",\n\t\"nombre\": \"juanito\",\n\t\"apellidos\": \"atomos\",\n\t\"direccion\": \"fake street 123\",\n\t\"telefono\": \"2284814\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/index",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"index"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Users Show (get by id)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"id\": \"970327218309\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/show",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"show"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Users Update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"id\": \"970327218309\",\n\t\"nombres\": \"rogers\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/updated/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"updated",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Users Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"id\": \"970327218309\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/destroy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"destroy"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
