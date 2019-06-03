@@ -1,0 +1,667 @@
+{
+	"info": {
+		"_postman_id": "163f2c7a-d006-4656-88b8-853f7b2f531b",
+		"name": "Coleccion 1 Sprint",
+		"description": "se prueban los 4 metodos http",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Servicios Rol",
+			"item": [
+				{
+					"name": "Create Rol",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"rol_name\": \"Admin\",\n\t\"descripcion\": \"rol diseñado principalmente para tener acceso a lista de compras a despachar y estadisticas de venta\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/rols/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"rols",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rol Index (get all)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/rols/index",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"rols",
+								"index"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rol Show (get by id)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"1\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/rols/show",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"rols",
+								"show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rol Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\t\t\"id\": \"2\",\n\t\t\"rol_name\": \"Administrador\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/rols/updated",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"rols",
+								"updated"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rol Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"2\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/rols/destroy",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"rols",
+								"destroy"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Servicios User",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user\":{\n\t\t\"no_id\": \"170327218318\",\n\t\t\"tipo_documento\": \"cc\",\n\t\t\"nombre\": \"pedrito\",\n\t\t\"apellidos\": \"escarchita\",\n\t\t\"direccion\": \"fake street 123\",\n\t\t\"telefono\": \"2284814\",\n\t\t\"password\": \"123456\",\n\t\t\"password_confirmation\": \"123456\",\n\t\t\"email\": \"pescarcha@unal.edu.co\"\n\t}\n}\n"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Index (get all)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/index",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"index"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users Show (get by id)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\t\"id\": \"1\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/show",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\t\"id\": \"1\",\n\t\"nombre\": \"rogers\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/updated/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"updated",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\t\"id\": \"18\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/destroy",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"destroy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Rol",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"18\",\n\t\"user\": \"1\",\n\t\"admin\": \"1\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/upgrade",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"upgrade"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Servicios Productos",
+			"item": [
+				{
+					"name": "Product Index (get all)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/products/index",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"index"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nombre\": \"colchon roto\",\n\t\"categoria\": \"colchones\",\n\t\"descripcion\": \"colchon que esta roto\",\n\t\"medidas\": \"2x2\",\n\t\"grosor\": \"0.5\",\n\t\"densidad\": \"similar al tungsteno\",\n\t\"tipo_tela\": \"algodon\",\n\t\"lamina\": \"de la buena\",\n\t\"cassata\": \"de la gruesita\",\n\t\"valor\": \"1000\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/products/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Show (get by id)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"2\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/products/show",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"2\",\n\t\"nombre\": \"colchon grande\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/products/updated",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"updated"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"2\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/products/destroy",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"destroy"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Servicios Pedidos",
+			"item": [
+				{
+					"name": "Order Create",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"productos\": [3,4],\n\t\"fecha\": \"02/06/19\",\n\t\"estado\": \"paquete perdido\",\n\t\"direccion_entrega\": \"fake street 123\",\n\t\"valor\": \"270770\",\n\t\"user_id\": \"19\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/orders/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order Index (get all)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/orders/index",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders",
+								"index"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order Show (get by id)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"5\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/orders/show",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders",
+								"show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":\"5\",\n\t\"direccion_entrega\": \"fake street 321\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/orders/updated",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders",
+								"updated"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"5\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/orders/destroy",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders",
+								"destroy"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
