@@ -175,7 +175,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"user\":{\n\t\t\"no_id\": \"170327218318\",\n\t\t\"tipo_documento\": \"cc\",\n\t\t\"nombre\": \"pedrito\",\n\t\t\"apellidos\": \"escarchita\",\n\t\t\"direccion\": \"fake street 123\",\n\t\t\"telefono\": \"2284814\",\n\t\t\"password\": \"123456\",\n\t\t\"password_confirmation\": \"123456\",\n\t\t\"email\": \"pescarcha@unal.edu.co\"\n\t}\n}\n"
+							"raw": "{\n\t\"user\":{\n\t\t\"no_id\": \"1703278318\",\n\t\t\"tipo_documento\": \"cc\",\n\t\t\"nombre\": \"billy\",\n\t\t\"apellidos\": \"Gemelo\",\n\t\t\"direccion\": \"fake street 123\",\n\t\t\"telefono\": \"2284814\",\n\t\t\"password\": \"123456\",\n\t\t\"password_confirmation\": \"123456\",\n\t\t\"email\": \"giulianomellizo_95@hotmail.com\"\n\t}\n}\n"
 						},
 						"url": {
 							"raw": "http://localhost:3000/users/create",
@@ -427,7 +427,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\": \"2\"\n}"
+							"raw": "{\n\t\"nombre\": \"colchon\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/products/show",
@@ -660,8 +660,170 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Generate PDF",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n\t{\n\t\t\"id\":\"10\",\n\t\t\"descripcion\":\"colchon A\",\n\t\t\"cantidad\": \"1\",\n\t\t\"preciounit\": \"150000\",\n\t\t\"preciototal\": \"150000\"\n\t},\n\t{\n\t\t\"id\":\"11\",\n\t\t\"descripcion\":\"colchon B\",\n\t\t\"cantidad\": \"2\",\n\t\t\"preciounit\": \"150000\",\n\t\t\"preciototal\": \"300000\"\n\t}\n]"
+						},
+						"url": {
+							"raw": "http://localhost:3000/orders/genpdf.pdf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders",
+								"genpdf.pdf"
+							]
+						}
+					},
+					"response": []
 				}
 			]
+		},
+		{
+			"name": "Servicios Mailer",
+			"item": [
+				{
+					"name": "Pedido entregado",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id_user\":\"19\",\n\t\"id_order\":\"4\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/orders/entregado_email",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders",
+								"entregado_email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Problema con pedido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id_user\":\"19\",\n\t\"id_order\":\"4\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/orders/problem_email",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders",
+								"problem_email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pedido confirmado",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id_user\":\"20\",\n\t\"id_order\":\"4\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/orders/confirmation_email",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders",
+								"confirmation_email"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"auth\":{\n\t\t\"email\": \"jcovallel@unal.edu.co\",\n\t\t\"password\": \"123456\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/user_token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user_token"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
